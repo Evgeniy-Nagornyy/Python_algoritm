@@ -19,17 +19,17 @@ def calc(a, operation, b):
             return f'{a / b = :.1f}'
         else:
             return 'Ошибка: деление на 0'
-    else:
-        return 'Ошибка: такого действия не существует'
 
-
-oper = None
 
 while True:
     oper = str(input('Для завершения введите 0\nВведите действие +, -, *, / : '))
-    if oper == '0':
-        break
+    if oper in '0+-*/':  # проверяем, есть ли у нас действие, которое ввел пользователь
+        if oper == '0':  # проверяем, хочет ли пользователь выйти из программы
+            print('Операция завершена')
+            break
+        else:
+            num_1 = float(input('Введите первое число: '))
+            num_2 = float(input('Введите второе число: '))
+            print(calc(num_1, oper, num_2))
     else:
-        num_1 = float(input('Введите первое число'))
-        num_2 = float(input('Введите первое число'))
-        print(calc(num_1, oper, num_2))
+        print('Ошибка: такого действия не существует')
