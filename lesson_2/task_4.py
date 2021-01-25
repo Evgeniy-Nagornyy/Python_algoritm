@@ -6,8 +6,7 @@ def func(num, line=''):
     if num == 0:
         return f'{line}'
     else:
-        line += str(num % 10)
-        return func(num // 10, line)
+        return func(num // 10, line + str(num % 10))
 
 
 number = int(input('Введите натуральное число: '))

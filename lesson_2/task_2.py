@@ -2,13 +2,11 @@
 
 
 def func(n, row=1, sum_row=1):
-    print(row, end=',  ')
+    print(row, end=',  ')  # Вывед для проверки
     if n == 1:
         return sum_row
     else:
-        row /= -2
-        sum_row += row
-        return func(n - 1, row, sum_row)
+        return func(n - 1, row / -2, sum_row + row)
 
 
 num = int(input('Введите количество элементов ряда: '))
